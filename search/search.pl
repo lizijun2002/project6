@@ -29,7 +29,7 @@ bfs([node(Room, _Keys, Path) | _], _Visited, Path) :-
     treasure(Room), !.
 
 % Skip if this (Room, Keys) state has already been visited
-bfs([node(Room, Keys, Path) | RestQueue], Visited, Actions) :-
+bfs([node(Room, Keys, _Path) | RestQueue], Visited, Actions) :-
     member(state(Room, Keys), Visited), !,
     bfs(RestQueue, Visited, Actions).
 
